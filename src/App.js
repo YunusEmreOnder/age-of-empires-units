@@ -1,10 +1,11 @@
 import React from 'react';
-import Home from './components/Home/Home'
-import Units from './components/Units/Units'
-import UnitDetails from './components/UnitDetails/UnitDetails'
-import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { combineReducers, createStore } from 'redux';
+import Home from './views/Home'
+import TopMenu from './components/Navbar'
+import Units from './views/Units'
+import UnitDetails from './views/UnitDetails'
+import './styles/App.scss';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createStore } from 'redux';
 
 function reducer() {
     return 'state'
@@ -14,10 +15,11 @@ const store = createStore(reducer)
 console.log(store.getState())
 function App() {
   return (
+    <div>
+
     <Router>
-       <Link to="/">Home</Link>
-       <Link to="/units">Units</Link>
-       <Link to="/unitDetails">UnitDetails</Link>
+    <TopMenu/>
+    <div className='container'>
 
        <Switch>
           <Route path="/units">
@@ -30,7 +32,10 @@ function App() {
             <Home/>
           </Route>
         </Switch>
+        </div>
+
    </Router>
+   </div> 
   );
 }
 
