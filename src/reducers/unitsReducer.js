@@ -1,4 +1,4 @@
-import {FILTER_UNITS, GET_UNITS} from '../actions/units'
+import {FILTER_UNITS, GET_UNITS} from '../actions/unitsAction'
 function unitsReducer(state =[], {type,payload} ){
     switch(type){
         case GET_UNITS:
