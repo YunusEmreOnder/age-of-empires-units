@@ -8,15 +8,16 @@ import { combineReducers,createStore } from 'redux';
 import {Provider} from 'react-redux'
 import unitsReducer from './reducers/unitsReducer'
 import unitDetailsReducer from './reducers/unitDetailsReducer'
+import costsReducer from './reducers/costsReducer'
 const rootReducer = combineReducers({
   units:unitsReducer,
   unitDetails:unitDetailsReducer,
+  costs:costsReducer,
 })
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
-//console.log(store.getState())
 store.subscribe((e) => console.log(e))
 
 ReactDOM.render( <Provider store={store}>< App / ></Provider> , document.getElementById('root'));
