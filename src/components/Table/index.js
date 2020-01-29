@@ -19,7 +19,6 @@ const TableList = (props) => {
           {
 props.units.map((unit,index)=>{
     const {id,name,age,cost} = unit
-    const costType =JSON.stringify(cost);
     return (
 <tr  key={id}>
           <th>{id}</th>
