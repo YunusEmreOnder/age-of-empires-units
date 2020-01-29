@@ -1,9 +1,9 @@
 import React from 'react';
-
+import main from  '../../assets/images/main.jpg';
 function Home() {
     return (
       <div>
-       <h1>Home Page</h1>
+       <img src={main} alt="Main" className="img-fluid"/>
      </div>
     );
   }
