@@ -1,5 +1,5 @@
 import React from 'react'; 
-import './index.scss';
+import { connect } from 'react-redux'
 import { NavLink as RRNavLink } from 'react-router-dom';
 import {
   Navbar,
@@ -8,11 +8,13 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import './index.scss';
 const TopMenu = (props) => {
+  const {title} = props
     return (
       <div>
         <Navbar color="light" light expand="md" className=''>
-          <NavbarBrand className="pageTitle" href="/">Home Page</NavbarBrand>
+          <NavbarBrand className="pageTitle" href="/">{title}</NavbarBrand>
             <Nav navbar>
               <NavItem>
                 <NavLink tag={RRNavLink} to="/" activeClassName="active">Home</NavLink>
@@ -26,4 +28,8 @@ const TopMenu = (props) => {
     );
   }
   
-  export default TopMenu;
+  
+const mapStateToProps = state => ({
+  title: state.pageTitle,
+})
+export default connect(mapStateToProps)(TopMenu);

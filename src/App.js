@@ -17,9 +17,8 @@ class App extends Component {
           <Container className=" mt-4 mb-4">
             <Switch>
               <Route path="/units" component={Units} />
-              <Route path="/unitDetails" component={UnitDetails} />
+              <Route path="/unitDetails/:id" component={UnitDetails} />
               <Route path="/" component={Home} />
-              <Route render={() => <div>Not Found</div>} />
             </Switch>
           </Container>
         </Router>

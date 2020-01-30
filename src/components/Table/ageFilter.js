@@ -1,7 +1,6 @@
 export const ageFilterData = {
     filter: (units, filterData) => {
 		let array = [];
-		console.log(filterData)
 		if(filterData.all){
 			return units
 		}else{

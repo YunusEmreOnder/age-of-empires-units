@@ -14,7 +14,6 @@ export const initialState = {
     imperial: false,
 }
 function agesReducer(state = initialState, { type, payload }) {
-    console.log(payload)
     switch (type) {
         case SET_ALL_FILTER:
             return {
