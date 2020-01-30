@@ -7,6 +7,7 @@ class AgesFilter extends Component {
         const { ages, setAgeAllFilter, setAgeDarkFilter, setAgeFeudalFilter, setAgeCastleFilter, setAgeImperialFilter } = this.props
         return (
             <div>
+                <h3>Ages</h3>
                 <ButtonGroup>
                     <Button onClick={() => setAgeAllFilter(true)} color="primary" active={ages.all}>All</Button>
                     <Button onClick={() => setAgeDarkFilter(true)} color="primary" active={ages.dark}>Dark</Button>

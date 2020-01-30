@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import InputRange from 'react-input-range';
 import { CustomInput, Row, Col } from 'reactstrap';
+import InputRange from 'react-input-range';
 import { costFilter, woodFilter, foodFilter, goldFilter, activeWoodCost, activeFoodCost, activeGoldCost } from '../../actions/costsAction'
 
 class SliderFilter extends Component {

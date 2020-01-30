@@ -1,11 +1,11 @@
 
-export const GET_UNIT = "GET_UNIT"
+export const SET_UNIT = "SET_UNIT"
 
-function getUnit(data = []){
+function setUnitAction(data = []){
    return{
-       type:GET_UNIT,
+       type:SET_UNIT,
        payload:data
    } 
 }
 
-export {getUnit}
+export {setUnitAction}
