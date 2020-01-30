@@ -14,6 +14,7 @@ export const ageFilterData = {
 				array.push(e)
 				else if(filterData.imperial && e.age === "Imperial")
 				array.push(e)
+				return array
 			})
 		}
 		return array
