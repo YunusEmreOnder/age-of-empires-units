@@ -1,8 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Table } from "reactstrap";
+import {costFilterData} from './costsFilter'
+import {ageFilterData} from './ageFilter'
 
-const TableList = props => {
+class TableList extends React.Component {
+  componentDidMount() {
+  }
+  render() {
+    const {units,costs,ages} =this.props
+
+    let ageFilterList = ageFilterData.filter(units,ages)
+    let filteredList = costFilterData.filter(ageFilterList,costs)
   return (
     <div>
       <Table bordered striped>
@@ -15,9 +24,9 @@ const TableList = props => {
           </tr>
         </thead>
         <tbody>
-          {props.units.map((unit, index) => {
+          {filteredList.map((unit, index) => {
             const { id, name, age, cost } = unit;
-            return (
+            return ( 
               <tr key={id}>
                 <th>{id}</th>
                 <td>{name}</td>
@@ -37,9 +46,11 @@ const TableList = props => {
       </Table>
     </div>
   );
-};
+};};
 
 const mapStateToProps = state => ({
-  units: state.units
+  units: state.units,
+  costs: state.costs,
+  ages: state.ages
 });
 export default connect(mapStateToProps)(TableList);

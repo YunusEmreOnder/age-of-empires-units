@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Button, ButtonGroup } from 'reactstrap';
 import TableList from '../../components/Table'
 import SliderFilter from '../../components/Slider'
+import AgesFilter from '../../components/Ages'
 import { getUnits } from '../../actions/unitsAction'
 import { costFilter } from '../../actions/costsAction'
 import 'react-input-range/lib/css/index.css';
@@ -24,13 +24,7 @@ class Units extends Component {
       <div className="units">
         {/* <button onClick={this.updateData}>updateData</button> */}
         <h3>Ages</h3>
-        <ButtonGroup>
-          <Button color="primary" active={true}>All</Button>
-          <Button color="primary">Dark</Button>
-          <Button color="primary">Fedual</Button>
-          <Button color="primary">Castle</Button>
-          <Button color="primary">Imperial</Button>
-        </ButtonGroup>
+        <AgesFilter/>
         <SliderFilter/>
         <TableList />
       </div>

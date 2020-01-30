@@ -9,10 +9,12 @@ import {Provider} from 'react-redux'
 import unitsReducer from './reducers/unitsReducer'
 import unitDetailsReducer from './reducers/unitDetailsReducer'
 import costsReducer from './reducers/costsReducer'
+import agesReducer from './reducers/agesReducer'
 const rootReducer = combineReducers({
   units:unitsReducer,
   unitDetails:unitDetailsReducer,
   costs:costsReducer,
+  ages:agesReducer,
 })
 const store = createStore(
   rootReducer,
