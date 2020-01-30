@@ -12,7 +12,6 @@ class UnitDetails extends Component {
     const { cost } = unit
     return (
       <div>
-        <h2>UnitDetails</h2>
         <Table bordered striped size="sm">
           <tbody>
             <tr>
