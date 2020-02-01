@@ -38,14 +38,13 @@ class UnitDetails extends Component {
             </tr>
             {cost
               ?
-              Object.entries(cost).map(([key, value], index) => {
+              Object.entries(cost).map(([key, value],index) => {
                 return (<tr key={index}>
                   <td>{key} Cost:</td>
                   <td>{value}</td>
                 </tr>);
               })
-
-              : ""}
+              : null} 
             <tr>
               <td>Build Time:</td>
               <td>{unit.build_time}</td>
