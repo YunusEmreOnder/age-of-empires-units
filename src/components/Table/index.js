@@ -28,7 +28,7 @@ class TableList extends React.Component {
     let filteredList = costFilterData.filter(ageFilterList, costs)
     return (
       <div>
-        <Table bordered striped hover>
+        <Table bordered striped hover className="unitsList">
           <thead>
             <tr>
               <th>#id</th>
