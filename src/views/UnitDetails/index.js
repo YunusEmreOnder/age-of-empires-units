@@ -1,11 +1,16 @@
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { pageTitle } from '../../actions/pageTitleAction'
 import { Table } from "reactstrap";
+import { pageTitle } from '../../actions/pageTitleAction'
+import { setUnitAction } from '../../actions/unitDetailsAction'
+import * as unitsData from '../../resources/units.json'
+const unitsList = unitsData.units
 class UnitDetails extends Component {
   componentDidMount() {
-    this.props.setPageTitle('Unit Detail Page')
+    const { match, setUnite, setPageTitle } = this.props;
+    const unit = unitsList.find(e => e.id === Number(match.params.id))
+    setPageTitle('Unit Detail Page')
+    setUnite(unit)
   }
   render() {
     const { unit } = this.props
@@ -32,14 +37,13 @@ class UnitDetails extends Component {
             </tr>
             {cost
               ?
-                Object.entries(cost).map(([key, value],index) => {
-                  return (<tr key={index}>
-                    <td>{key} Cost:</td>
-                    <td>{value}</td>
-                  </tr>);
-                })
-
-              : ""}
+              Object.entries(cost).map(([key, value],index) => {
+                return (<tr key={index}>
+                  <td>{key} Cost:</td>
+                  <td>{value}</td>
+                </tr>);
+              })
+              : null} 
             <tr>
               <td>Build Time:</td>
               <td>{unit.build_time}</td>
@@ -71,7 +75,8 @@ const mapStateToProps = state => ({
   unit: state.unitDetails
 })
 const mapDispatchToProps = {
-  setPageTitle: pageTitle
-
+  setPageTitle: pageTitle,
+  setUnite: setUnitAction,
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(UnitDetails);
