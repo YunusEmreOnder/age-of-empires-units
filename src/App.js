@@ -11,7 +11,6 @@ import UnitDetails from './views/UnitDetails'
 class App extends Component {
   render() {
     return (
-      <div>
         <Router>
           <TopMenu />
           <Container className=" mt-4 mb-4">
@@ -22,7 +21,6 @@ class App extends Component {
             </Switch>
           </Container>
         </Router>
-      </div>
     )
   }
 }

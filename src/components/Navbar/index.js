@@ -12,7 +12,6 @@ import './index.scss';
 const TopMenu = (props) => {
   const {title} = props
     return (
-      <div>
         <Navbar color="light" light expand="md" className=''>
           <NavbarBrand className="pageTitle" href="/">{title}</NavbarBrand>
             <Nav navbar>
@@ -24,7 +23,6 @@ const TopMenu = (props) => {
               </NavItem>
             </Nav>
         </Navbar>
-      </div>
     );
   }
   
