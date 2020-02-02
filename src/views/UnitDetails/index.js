@@ -3,14 +3,11 @@ import { connect } from 'react-redux'
 import { Table } from "reactstrap";
 import { pageTitle } from '../../actions/pageTitleAction'
 import { setUnitAction } from '../../actions/unitDetailsAction'
-import * as unitsData from '../../resources/units.json'
-const unitsList = unitsData.units
 class UnitDetails extends Component {
   componentDidMount() {
-    const { match, setUnite, setPageTitle } = this.props;
-    const unit = unitsList.find(e => e.id === Number(match.params.id))
+    const { match, setUnite, setPageTitle} = this.props;
     setPageTitle('Unit Detail Page')
-    setUnite(unit)
+    setUnite(match.params.id)
   }
   render() {
     const { unit } = this.props
@@ -37,13 +34,13 @@ class UnitDetails extends Component {
             </tr>
             {cost
               ?
-              Object.entries(cost).map(([key, value],index) => {
+              Object.entries(cost).map(([key, value], index) => {
                 return (<tr key={index}>
                   <td>{key} Cost:</td>
                   <td>{value}</td>
                 </tr>);
               })
-              : null} 
+              : null}
             <tr>
               <td>Build Time:</td>
               <td>{unit.build_time}</td>

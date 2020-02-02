@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run mock:api`
+
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
