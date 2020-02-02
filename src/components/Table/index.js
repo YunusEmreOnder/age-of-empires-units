@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { Table } from "reactstrap";
 import { Redirect } from 'react-router';
@@ -62,7 +63,9 @@ class TableList extends React.Component {
     );
   };
 };
-
+TableList.propTypes = {
+  units: PropTypes.array.isRequired,
+}
 const mapStateToProps = state => ({
   units: state.units,
   costs: state.costs,
