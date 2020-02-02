@@ -10,7 +10,7 @@ class SliderFilter extends Component {
         this.state = {}
     }
     render() {
-        const { costs, setWoodFilter, setFoodFilter, setGoldFilter,setActiveWoodCost,setActiveFoodCost, setActiveGoldCost  } = this.props;
+        const { costs, setWoodFilter, setFoodFilter, setGoldFilter, setActiveWoodCost, setActiveFoodCost, setActiveGoldCost } = this.props;
         return (
             <div>
                 <h3 className="mt-3">Costs</h3>

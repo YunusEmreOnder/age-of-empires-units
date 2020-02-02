@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import TableList from '../../components/Table'
 import SliderFilter from '../../components/Slider'
 import AgesFilter from '../../components/Ages'
-import getUnits from '../../actions/unitsAction'
+import { getUnits } from '../../actions/unitsAction'
 import { costFilter } from '../../actions/costsAction'
 import { pageTitle } from '../../actions/pageTitleAction'
 import 'react-input-range/lib/css/index.css';

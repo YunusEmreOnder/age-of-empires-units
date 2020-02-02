@@ -5,7 +5,7 @@ import { pageTitle } from '../../actions/pageTitleAction'
 import { setUnitAction } from '../../actions/unitDetailsAction'
 class UnitDetails extends Component {
   componentDidMount() {
-    const { match, setUnite, setPageTitle} = this.props;
+    const { match, setUnite, setPageTitle } = this.props;
     setPageTitle('Unit Detail Page')
     setUnite(match.params.id)
   }

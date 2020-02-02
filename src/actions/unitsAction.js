@@ -7,4 +7,4 @@ function getUnits(data = []) {
     }
 }
 
-export default getUnits 
+export {getUnits}

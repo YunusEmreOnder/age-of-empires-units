@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import { connect } from 'react-redux'
 import { NavLink as RRNavLink } from 'react-router-dom';
 import {
@@ -10,25 +10,25 @@ import {
 } from 'reactstrap';
 import './index.scss';
 const TopMenu = (props) => {
-  const {title} = props
-    return (
-      <div>
-        <Navbar color="light" light expand="md" className=''>
-          <NavbarBrand className="pageTitle" href="/">{title}</NavbarBrand>
-            <Nav navbar>
-              <NavItem>
-                <NavLink tag={RRNavLink} to="/" activeClassName="active">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={RRNavLink} to="/units" activeClassName="active">Units</NavLink>
-              </NavItem>
-            </Nav>
-        </Navbar>
-      </div>
-    );
-  }
-  
-  
+  const { title } = props
+  return (
+    <div>
+      <Navbar color="light" light expand="md" className=''>
+        <NavbarBrand className="pageTitle" href="/">{title}</NavbarBrand>
+        <Nav navbar>
+          <NavItem>
+            <NavLink tag={RRNavLink} to="/" activeClassName="active">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={RRNavLink} to="/units" activeClassName="active">Units</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
+    </div>
+  );
+}
+
+
 const mapStateToProps = state => ({
   title: state.pageTitle,
 })
